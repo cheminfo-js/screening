@@ -26,7 +26,7 @@ class Plate {
     }
 
     getByPosition(position) {
-        return this.data[this.positionToNumber(position, this.width)-1];
+        return this.data[Util.positionToNumber(position, this.width)-1];
     }
 
     getByNumber(number) {
