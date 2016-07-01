@@ -21,9 +21,43 @@ class Plate {
         return this.wells;
     }
 
-    get(index) {
-        return this.wells[index-1];
+    select(range) {
+        if (range) {
+            this.wells.forEach(function(well) {
+                well.selected=false;
+            });
+            var reg = /(\d+)(-(\d+))?,?/g;
+            var m;
+            while(m = reg.exec(range)) {
+                var from = +m[1];
+                var to = +m[3];
+                if(to && from <= to) {
+                    for (var i=from; i<=to; i++) {
+                        var well = this.wells[i-1];
+                        if (! isEmpty(well.info)) well.selected=true;
+                    }
+                } else {
+                    var well = this.wells[from-1];
+                    if (! isEmpty(well.info)) well.selected=true;
+                }
+            }
+        } else {
+            this.wells.forEach(function(well) {
+                if (isEmpty(well.info)) {
+                    well.selected=false;
+                } else {
+                    well.selected=true;
+                }
+            });
+        }
     }
+
+    getArrayElement(index) {
+        return this.wells[index];
+    }
+
+
+
 
     getByPosition(position) {
         return this.wells[Util.positionToNumber(position, this.width)-1];
@@ -48,6 +82,9 @@ class Plate {
     }
 }
 
-
+function isEmpty(object) {
+    var isEmpty = Object.keys(object).length === 0 && object.constructor === Object;
+    return isEmpty;
+}
 
 module.exports=Plate;
