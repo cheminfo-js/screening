@@ -6,6 +6,6 @@ var Plate=require('./plate.js');
 
 
 module.exports = {
-    Util: Util,
-    Plate: Plate
+    Util,
+    Plate
 };

@@ -36,8 +36,8 @@ function numberToString(number) {
 }
 
 module.exports = {
-    numberToString: numberToString,
-    stringToNumber: stringToNumber,
-    numberToPosition: numberToPosition,
-    positionToNumber: positionToNumber
+    numberToString,
+    stringToNumber,
+    numberToPosition,
+    positionToNumber
 }

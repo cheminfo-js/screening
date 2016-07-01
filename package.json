@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "mocha --require should --reporter mocha-better-spec-reporter --recursive",
-    "build": "cheminfo build --root screening"
+    "build": "cheminfo build --root --no-uglify screening"
   },
   "repository": {
     "type": "git",
