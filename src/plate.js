@@ -41,7 +41,7 @@ class Plate {
                 this.data[i]={
                     number: i+1,
                     position: Util.numberToPosition(i+1, this.width),
-                    value: {}
+                    info: {}
                 };
             }
         }
