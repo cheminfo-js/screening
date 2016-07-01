@@ -56,7 +56,17 @@ class Plate {
         return this.wells[index];
     }
 
-
+    updateColor(options) {
+        this.wells.forEach(function(well) {
+            if (isEmpty(well.info)) {
+                well.color='white';
+            } else if (well.selected) {
+                well.info.color= 'rgba(255, 192, 203, 1)';
+            } else {
+                well.info.color='rgba(255, 192, 203, 0.3)';
+            }
+        })
+    }
 
 
     getByPosition(position) {
