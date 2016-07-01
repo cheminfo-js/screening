@@ -61,9 +61,9 @@ class Plate {
             if (isEmpty(well.info)) {
                 well.color='white';
             } else if (well.selected) {
-                well.info.color= 'rgba(255, 192, 203, 1)';
+                well.info.color= 'rgba(144, 238, 144, 1)';
             } else {
-                well.info.color='rgba(255, 192, 203, 0.3)';
+                well.info.color='rgba(144, 238, 144, 0.3)';
             }
         })
     }
