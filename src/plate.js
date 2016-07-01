@@ -25,6 +25,14 @@ class Plate {
         return this.data[index-1];
     }
 
+    getByPosition(position) {
+        return this.data[positionToNumber(position, this.width)-1];
+    }
+
+    getByNumber(number) {
+        return this.data[number-1];
+    }
+
     initialize() {
         this.data=new Array(this.size);
         for (var row=0; row<this.height; row++) {
