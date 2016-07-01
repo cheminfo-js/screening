@@ -17,35 +17,34 @@ class Plate {
         this.initialize();
     }
 
-    getData() {
-        return this.data;
+    getWells() {
+        return this.wells;
     }
 
     get(index) {
-        return this.data[index-1];
+        return this.wells[index-1];
     }
 
     getByPosition(position) {
-        return this.data[Util.positionToNumber(position, this.width)-1];
+        return this.wells[Util.positionToNumber(position, this.width)-1];
     }
 
     getByNumber(number) {
-        return this.data[number-1];
+        return this.wells[number-1];
     }
 
     initialize() {
-        this.data=new Array(this.size);
+        this.wells=new Array(this.size);
         for (var row=0; row<this.height; row++) {
             for (var column=0; column<this.width; column++) {
                 var i=row*this.width+column;
-                this.data[i]={
+                this.wells[i]={
                     number: i+1,
                     position: Util.numberToPosition(i+1, this.width),
                     info: {}
                 };
             }
         }
-        console.log('done');
     }
 }
 
