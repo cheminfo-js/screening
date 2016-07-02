@@ -1,37 +1,35 @@
 [
   {
-    "plateCode": 1,
     "plateNumber": 1,
     "user": "nmrsu",
-    "project": "ABC",
+    "name": "ABC",
     "title": "project: ABC\\nbatch: 4CADA006",
     "position": "A1",
     "experiments": [
       {
-        "sequence": "N PROF_URINE_NOESY",
+        "experiment": "N PROF_URINE_NOESY",
         "solvent": "urine"
       },
       {
-        "sequence": "N PROF_URINE_JRES",
+        "experiment": "N PROF_URINE_JRES",
         "solvent": "urine"
       }
     ]
   },
   {
-    "plateCode": 1,
     "plateNumber": 1,
     "user": "nmrsu",
-    "project": "ABC",
+    "name": "ABC",
     "title": "project: ABC\\nbatch: 4Cham010",
     "position": "A2",
     "experiments": [
       {
-        "sequence": "N PROF_URINE_NOESY",
+        "experiment": "N PROF_URINE_NOESY",
         "solvent": "urine",
         "parameters": []
       },
       {
-        "sequence": "N PROF_URINE_JRES",
+        "experiment": "N PROF_URINE_JRES",
         "solvent": "urine",
         "parameters": []
       }

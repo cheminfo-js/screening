@@ -28,12 +28,12 @@ function generateFile (requests, options) {
         textFile.push("USER "+request.user);
         textFile.push("HOLDER "+holder);
         textFile.push("NO_SUBMIT");
-        textFile.push("NAME "+request.project);
+        textFile.push("NAME "+request.name);
         textFile.push("TITLE "+request.title);
         for (var experiment of request.experiments) {
             textFile.push("EXPNO "+experimentNumber++);
             textFile.push("SOLVENT "+experiment.solvent);
-            textFile.push("EXPERIMENT "+experiment.sequence);
+            textFile.push("EXPERIMENT "+experiment.experiment);
             if (experiment.parameters && experiment.parameters.length>0) {
                 var parameters=[];
                 for (var parameter of experiment.parameters) {
