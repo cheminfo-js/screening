@@ -8,7 +8,7 @@ options:
 - eol : end of line delimiter (Default: \r\n)
 - plateNumber : the position of the plate (Default: 1)
 - deleteExistingHolder : flag specifying if existing experiments should be deleted (Default: false)
-
+- autosubmit : submit automatically (Default: false)
  */
 
 function generateFile (requests, options) {
@@ -27,7 +27,7 @@ function generateFile (requests, options) {
         }
         textFile.push("USER "+request.user);
         textFile.push("HOLDER "+holder);
-        textFile.push("NO_SUBMIT");
+        if (! options.autosubmit) textFile.push("NO_SUBMIT");
         textFile.push("NAME "+request.name);
         textFile.push("TITLE "+request.title);
         for (var experiment of request.experiments) {
