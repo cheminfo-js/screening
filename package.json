@@ -2,14 +2,21 @@
   "name": "screening",
   "version": "1.0.2",
   "description": "Tools for numbering screening plate",
-  "main": "./src/index.js",
-  "directories": {
-    "lib": "src",
-    "test": "test"
-  },
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "test": "mocha --require should --reporter mocha-better-spec-reporter --recursive",
-    "build": "cheminfo build --no-uglify --root screening"
+    "build": "cheminfo-build --entry src/index.js --root screening",
+    "build-docs": "typedoc --out docs --name \"Chromatography\" --mode file --includeDeclarations --excludeExternals --hideGenerator --excludePrivate --moduleResolution node --target ESNext chromatography.d.ts",
+    "eslint": "eslint src --cache",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepublishOnly": "rollup -c",
+    "test": "npm run test-coverage && npm run eslint",
+    "test-only": "jest",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,9 +33,13 @@
   },
   "homepage": "https://github.com/cheminfo-js/screning",
   "devDependencies": {
-    "cheminfo-tools": "^1.0.2",
-    "mocha": "^2.2.5",
-    "mocha-better-spec-reporter": "^2.1.1",
-    "should": "^7.0.2"
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
+    "@types/jest": "^25.1.4",
+    "cheminfo-tools": "^1.23.3",
+    "eslint": "^6.8.0",
+    "eslint-config-cheminfo": "^2.0.4",
+    "jest": "^25.1.0",
+    "prettier": "^2.0.2",
+    "rollup": "^2.1.0"
   }
 }
