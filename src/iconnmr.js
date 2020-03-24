@@ -1,13 +1,14 @@
 import { positionToNumber } from './util.js';
 
-/*
-options:
-- eol : end of line delimiter (Default: \r\n)
-- plateNumber : the position of the plate (Default: 1)
-- deleteExistingHolder : flag specifying if existing experiments should be deleted (Default: false)
-- autosubmit : submit automatically (Default: false)
+/**
+ *
+ * @param {array} requests
+ * @param {object} [options={}]
+ * @param {string} [optios.eol='\r\n']
+ * @param {string} [optios.plateNumber=1] position of the plate
+ * @param {string} [optios.deleteExistingHolder=false] flag specifying if existing experiments should be deleted
+ * @param {string} [optios.autosubmit=false] submit automatically
  */
-
 export function generateFile(requests, options = {}) {
   const EOL = options.eol || '\r\n';
   const { plateNumber = 1 } = options;

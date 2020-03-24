@@ -1,13 +1,14 @@
 import { positionToNumber, numberToPosition } from './util.js';
-/*
-index starts at 1 !
 
+/**
+ * Class dealing with plates
+ * @param {object} [options={}]
+ * @param {number} [options.width=12] width of the plate
+ * @param {number} [options.height=options.width/3*2] height of the plase
+ * @param {number} [options.size=options.width*options.height] size of the plate
  */
-
 export class Plate {
-  constructor(options) {
-    options = options || {};
-
+  constructor(options = {}) {
     this.width = options.width || 12;
     this.height = options.height || (this.width / 3) * 2;
     this.size = this.width * this.height;
@@ -89,7 +90,6 @@ export class Plate {
 }
 
 function isEmpty(object) {
-  let isEmpty =
-    Object.keys(object).length === 0 && object.constructor === Object;
-  return isEmpty;
+  let empty = Object.keys(object).length === 0 && object.constructor === Object;
+  return empty;
 }
