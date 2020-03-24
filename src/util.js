@@ -32,7 +32,7 @@ export function stringToNumber(string) {
 
 export function numberToString(number) {
   let string = '';
-  while (number != 0) {
+  while (number !== 0) {
     string = String.fromCharCode(((number - 1) % 26) + 65) + string;
     number = Math.floor((number - 1) / 26);
   }
